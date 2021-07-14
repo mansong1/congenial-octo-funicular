@@ -5,15 +5,15 @@ name: ci
 steps:
   - name: format
     image: mansong/drone-terraform:latest
-    actions:
-      - fmt
-      fmt_options:
-        write: false
-        diff: true
-        check: true
+    commands:
+      - fmt -write=false -diff=true -check=true
 
   - name: validate
     image: mansong/drone-terraform:latest
-    actions:
+    commands:
        - validate
-       - plan
+  
+  - name: plan
+    image: mansong/drone-terraform:latest
+    commands:
+      - plan
