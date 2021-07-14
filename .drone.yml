@@ -1,0 +1,19 @@
+kind: pipeline
+type: docker
+name: ci
+
+steps:
+  - name: format
+    image: mansong/drone-terraform:latest
+    actions:
+      - fmt
+      fmt_options:
+        write: false
+        diff: true
+        check: true
+
+  - name: validate
+    image: mansong/drone-terraform:latest
+    actions:
+       - validate
+       - plan
