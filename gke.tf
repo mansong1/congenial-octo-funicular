@@ -14,7 +14,7 @@ variable "gke_num_nodes" {
 }
 
 resource "google_container_cluster" "primary" {
-  name     = "${var.project_id}-gke"
+  name     = "congenial-octo-funicular"
   location = var.region
 
   # We can't create a cluster with no node pool defined, but we want to only use
@@ -46,7 +46,7 @@ resource "google_container_node_pool" "primary_nodes" {
 
     # preemptible  = true
     machine_type = "n2d-standard-8"
-    tags         = ["gke-node", "${var.project_id}-gke"]
+    tags         = ["gke-node", "congenial-octo-funicular"]
     metadata = {
       disable-legacy-endpoints = "true"
     }
