@@ -4,16 +4,16 @@ name: ci
 
 steps:
   - name: format
-    image: mansong/drone-terraform:latest
+    image: hashicorp/terraform:light
     commands:
-      - fmt -write=false -diff=true -check=true
+      - terraform fmt -write=false -diff=true -check=true
 
   - name: validate
-    image: mansong/drone-terraform:latest
+    image: hashicorp/terraform:light
     commands:
-       - validate
+       - terraform validate
   
   - name: plan
-    image: mansong/drone-terraform:latest
+    image: hashicorp/terraform:light
     commands:
-      - plan
+      - terraform plan
