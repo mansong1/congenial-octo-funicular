@@ -14,4 +14,3 @@ resource "helm_release" "dashboard" {
   repository = "https://kubernetes.github.io/dashboard/"
   chart      = "kubernetes-dashboard/kubernetes-dashboard"
 }
-
