@@ -16,4 +16,5 @@ steps:
   - name: plan
     image: hashicorp/terraform:light
     commands:
+      - terraform init
       - terraform plan
