@@ -1,3 +1,8 @@
+variable "cluster_name" {
+  default = ""
+  description = "gke cluster name"
+}
+
 variable "gke_username" {
   default     = ""
   description = "gke username"
@@ -14,7 +19,7 @@ variable "gke_num_nodes" {
 }
 
 resource "google_container_cluster" "primary" {
-  name     = "congenial-octo-funicular"
+  name     = var.cluster_name
   location = var.region
 
   # We can't create a cluster with no node pool defined, but we want to only use
@@ -41,7 +46,7 @@ resource "google_container_node_pool" "primary_nodes" {
     ]
 
     labels = {
-      env = var.project_id
+      env = var.cluster_name
     }
 
     # preemptible  = true
