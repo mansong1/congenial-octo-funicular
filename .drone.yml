@@ -11,6 +11,7 @@ steps:
   - name: validate
     image: hashicorp/terraform:light
     commands:
+       - terraform init 
        - terraform validate
   
   - name: plan
