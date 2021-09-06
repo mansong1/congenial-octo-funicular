@@ -1,7 +1,7 @@
 ## Follow  below commands for creating prometheus pod and scrap the data from cluster 
 
  - Create a Namespace monitoring 
- ``` kubectl create namespace monitoring ```
+ ``` kubectl create namespace prometheus ```
  
  - Create the role using the following command
  ``` kubectl create -f clusterRole.yaml ```
