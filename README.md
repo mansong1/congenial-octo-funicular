@@ -2,7 +2,6 @@
 
 GKE Cluster using terraform
 
-
 ## Fetching SA Token
 
 ACCOUNT_SECRET=$(kubectl get sa ${ACCOUNT_NAME} -n ${NAMESPACE} -o jsonpath="{.secrets[].name}")
